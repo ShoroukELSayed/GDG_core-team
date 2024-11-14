@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task1/widgets/custom_elevated_button.dart';
 import 'package:task1/widgets/hyper_link.dart';
-import 'package:task1/screens/login.dart';
-import 'package:task1/screens/register.dart';
+import 'package:task1/screens/login_screen.dart';
+import 'package:task1/screens/register_screen.dart';
 
 import '../constants/assets.dart';
 
@@ -52,7 +52,7 @@ class Welcome extends StatelessWidget {
                   name: 'Login',
                   colorText: Colors.white,
                   onPressed: () {
-                    Navigator.pushNamed(context, Login.id);
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                 ),
                 const SizedBox(height: 10),
@@ -61,7 +61,7 @@ class Welcome extends StatelessWidget {
                   name: 'Register',
                   colorText: Colors.black,
                   onPressed: () {
-                    Navigator.pushNamed(context, Register.id);
+                    Navigator.pushNamed(context, RegisterScreen.id);
                   },
                 ),
                 const Spacer(),

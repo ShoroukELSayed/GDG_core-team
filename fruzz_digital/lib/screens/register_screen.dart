@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task1/constants/assets.dart';
 import 'package:task1/models/user_model.dart';
-import 'package:task1/screens/login.dart';
+import 'package:task1/screens/login_screen.dart';
 import 'package:task1/services/form_validator.dart';
 import 'package:task1/widgets/back_icon.dart';
 import 'package:task1/widgets/custom_elevated_button.dart';
@@ -12,15 +12,15 @@ import 'package:task1/widgets/social_login_button.dart';
 
 import '../widgets/hyper_link.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
   static String id = 'register';
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final key = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   UserModel userModel = UserModel();
@@ -111,7 +111,7 @@ class _RegisterState extends State<Register> {
                   const Text('Already have an account? '),
                   HyperLink(
                     onTap: () {
-                      Navigator.pushNamed(context, Login.id);
+                      Navigator.pushNamed(context, LoginScreen.id);
                     },
                     text: ' Login Now',
                     color: const Color(0xff00CCC8),
