@@ -39,6 +39,8 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   flutter_hooks: ^0.21.2
   gap: ^3.0.1
+  flutter_svg: ^2.0.17
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -95,3 +97,4 @@ flutter_assets:
   assets_path: assets/images/
   output_path: lib/core/utils/
   filename: app_images.dart
+  ignore_comments: true

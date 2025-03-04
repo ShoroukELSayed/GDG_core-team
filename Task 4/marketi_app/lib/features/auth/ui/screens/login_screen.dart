@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:marketi_app/features/auth/ui/widgets/login_body.dart';
+import 'package:marketi_app/features/auth/ui/widgets/skip_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -8,8 +10,12 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        actions: [
+          SkipButton(),
+          Spacer(),
+        ],
       ),
+      body: LoginBody(),
     );
   }
 }

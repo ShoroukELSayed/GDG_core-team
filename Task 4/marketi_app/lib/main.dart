@@ -1,10 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:marketi_app/features/onBoarding/ui/screens/onboarding_screen.dart';
-
-import 'features/auth/ui/screens/login_screen.dart';
-import 'features/splash/ui/screens/splash_screen.dart';
+import 'package:marketi_app/core/routing/routes.dart';
+import 'package:marketi_app/features/splash/ui/screens/splash_screen.dart';
 
 void main() {
   runApp(
@@ -21,12 +19,15 @@ class MarketiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      routes: {
-        SplashScreen.id: (context) => const SplashScreen(),
-        OnboardingScreen.id: (context) => const OnboardingScreen(),
-        LoginScreen.id: (context) => const LoginScreen(),
-      },
+      routes: routes,
       initialRoute: SplashScreen.id,
     );
   }
