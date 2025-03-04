@@ -23,13 +23,13 @@ class LoginBody extends StatelessWidget {
           Image.asset(Assets.assetsImagesLogoSplashScreen),
           CustomTextFormField(
             hintText: 'Username or Email',
-            prefixIcon: Icons.email_outlined,
+            prefixIcon: Icon(Icons.email_outlined),
           ),
           Gap(14),
           CustomTextFormField(
             hintText: 'Enter Your Password',
-            prefixIcon: Icons.lock_outline_rounded,
-            suffixIcon: Icons.visibility_off,
+            prefixIcon: Icon(Icons.lock_outline_rounded),
+            suffixIcon: Icon(Icons.visibility_off),
           ),
           Gap(6),
           Remember(),

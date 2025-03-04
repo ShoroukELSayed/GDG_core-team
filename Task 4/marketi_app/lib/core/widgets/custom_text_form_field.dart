@@ -3,11 +3,15 @@ import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, required this.hintText, required this.prefixIcon, this.suffixIcon});
+  const CustomTextFormField(
+      {super.key,
+      required this.hintText,
+      required this.prefixIcon,
+      this.suffixIcon});
 
   final String hintText;
-  final IconData prefixIcon;
-  final IconData? suffixIcon;
+  final Widget prefixIcon;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -17,10 +21,8 @@ class CustomTextFormField extends StatelessWidget {
           color: AppColors.hintTextColor,
           fontStyle: AppStyles.regular12.fontStyle,
         ),
-        prefixIcon: Icon(
-          prefixIcon
-        ),
-        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
         enabledBorder: _outlineInputBorder(),
         focusedBorder: _outlineInputBorder(),
         border: _outlineInputBorder(),

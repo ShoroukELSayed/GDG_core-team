@@ -13,8 +13,8 @@ class UserInfoItem extends StatelessWidget {
 
   final String label;
   final String hintText;
-  final IconData prefixIcon;
-  final IconData? suffixIcon;
+  final Widget prefixIcon;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {

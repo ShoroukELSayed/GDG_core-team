@@ -33,14 +33,14 @@ class CreateNewPasswordScreen extends StatelessWidget {
             UserInfoItem(
               label: 'Password',
               hintText: 'Enter Your Password',
-              prefixIcon: Icons.lock_outline,
-              suffixIcon: Icons.visibility_off,
+              prefixIcon: Icon(Icons.lock_outline),
+              suffixIcon: Icon(Icons.visibility_off),
             ),
             UserInfoItem(
               label: 'Confirm Password',
               hintText: 'confirm Your Password',
-              prefixIcon: Icons.lock_outline,
-              suffixIcon: Icons.visibility_off,
+              prefixIcon: Icon(Icons.lock_outline),
+              suffixIcon: Icon(Icons.visibility_off),
             ),
             Gap(22),
             CustomButton.primary(

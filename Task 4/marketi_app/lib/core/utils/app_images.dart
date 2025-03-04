@@ -29,5 +29,7 @@ class Assets {
   static const String assetsImagesIllustrationVerificationCodeWithPhone = "assets/images/Illustration_Verification_Code_With_Phone.png";
 
   static const String assetsImagesLogoSplashScreen = "assets/images/logo_splash_screen.png";
+
+  static const String assetsImagesNameIcon = "assets/images/Name_Icon.svg";
 }
 

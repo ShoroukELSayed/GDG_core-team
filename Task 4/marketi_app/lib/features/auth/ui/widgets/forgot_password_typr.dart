@@ -25,7 +25,7 @@ class ForgotPasswordType extends StatelessWidget {
         UserInfoItem(
           label: isPhone ? 'Phone Number':'Email',
           hintText: isPhone? '+20 1501142409 ':'You@gmail.com',
-          prefixIcon: Icons.phone_iphone_sharp,
+          prefixIcon: Icon(Icons.phone_iphone_sharp),
         ),
         CustomButton.primary(
             text: 'Send Code',
