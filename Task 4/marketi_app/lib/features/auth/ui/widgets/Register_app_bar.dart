@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 import 'package:marketi_app/core/widgets/custom_back_button.dart';
 
-class LoginAppBar extends StatelessWidget {
-  const LoginAppBar({
+class RegisterAppBar extends StatelessWidget {
+  const RegisterAppBar({
     super.key,
   });
 

@@ -19,7 +19,7 @@ class OnboardingScreen extends HookWidget {
             controller: controller,
             pageViewItemModel: PageViewItemModel(
               image: Assets.assetsImagesIllustrationOnboarding1,
-              title: 'Welcom to Marketi',
+              title: 'Welcome to Marketi',
               description:
                   'Discover a world of endless possibilities and shop from the comfort of your fingertips Browse through a wide range of products, from fashion and electronics to home.',
             ),
