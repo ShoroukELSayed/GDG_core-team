@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
-import 'package:marketi_app/features/auth/ui/screens/register_screen.dart';
 
 class RichTextSection extends StatelessWidget {
   const RichTextSection({
@@ -24,7 +25,7 @@ class RichTextSection extends StatelessWidget {
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Navigator.pushNamed(context, RegisterScreen.id);
+                context.push(Routes.register);
               },
           ),
         ],

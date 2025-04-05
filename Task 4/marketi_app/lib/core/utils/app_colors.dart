@@ -5,4 +5,5 @@ class AppColors {
   static const Color secondaryColor = Color(0xFF001640);
   static const Color outlinedColor = Color(0xffB2CCFF);
   static const Color hintTextColor = Color(0xff929BAB);
+  static const Color dartBlue700 = Color(0xff002B7F);
 }

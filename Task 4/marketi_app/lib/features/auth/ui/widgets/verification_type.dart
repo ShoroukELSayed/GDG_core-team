@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_button.dart';
 import 'package:marketi_app/core/widgets/custom_pin_code_text_field.dart';
-import 'package:marketi_app/features/auth/ui/screens/create_new_password_screen.dart';
 
 class VerificationType extends StatefulWidget {
   const VerificationType({
@@ -38,7 +39,7 @@ class _VerificationTypeState extends State<VerificationType> {
         CustomButton.primary(
             text: 'Verify Code',
             onPressed: () {
-              Navigator.pushNamed(context, CreateNewPasswordScreen.id);
+              context.push(Routes.createNewPassword);
             }),
         Gap(22),
         Align(

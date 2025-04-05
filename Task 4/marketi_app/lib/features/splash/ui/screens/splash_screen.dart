@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
-import 'package:marketi_app/features/onBoarding/ui/screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
-  static  String id = 'SplashScreen';
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(
       const Duration(seconds: 3),
-      () => Navigator.pushReplacementNamed(context, OnboardingScreen.id),
+      () => context.go(Routes.onboarding),
     );
     super.initState();
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
-import 'package:marketi_app/features/auth/ui/screens/forgot_password_screen.dart';
 
 class Remember extends StatelessWidget {
   const Remember({
@@ -24,10 +25,9 @@ class Remember extends StatelessWidget {
         Spacer(),
         TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, ForgotPasswordScreen.id);
+              context.push(Routes.forgotPassword);
             },
-            child:
-                Text('Forgot Password?', style: AppStyles.medium12))
+            child: Text('Forgot Password?', style: AppStyles.medium12))
       ],
     );
   }

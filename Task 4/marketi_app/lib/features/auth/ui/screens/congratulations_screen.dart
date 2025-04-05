@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_app_bar.dart';
 import 'package:marketi_app/core/widgets/custom_button.dart';
-import 'package:marketi_app/features/auth/ui/screens/login_screen.dart';
 
 class CongratulationsScreen extends StatelessWidget {
   const CongratulationsScreen({super.key});
@@ -34,7 +35,7 @@ class CongratulationsScreen extends StatelessWidget {
             CustomButton.primary(
               text: 'Log In',
               onPressed: () {
-                Navigator.pushReplacementNamed(context, LoginScreen.id);
+                context.go(Routes.login);
               },
             ),
           ],

@@ -25,6 +25,14 @@ class AppStyles {
     fontSize: 12,
     color: AppColors.hintTextColor,
   );
+  static final TextStyle regular16 = regular.copyWith(
+    fontSize: 16,
+    color: AppColors.hintTextColor,
+  );
+  static final TextStyle semiBold14 = semiBold.copyWith(
+    fontSize: 14,
+    color: AppColors.primaryColor,
+  );
   static final TextStyle semiBold16 = semiBold.copyWith(
     fontSize: 16,
     color: AppColors.primaryColor,
@@ -33,21 +41,25 @@ class AppStyles {
     fontSize: 20,
     color: AppColors.secondaryColor,
   );
-  static final TextStyle medium12 = semiBold.copyWith(
+  static final TextStyle medium12 = medium.copyWith(
     fontSize: 12,
     color: AppColors.primaryColor,
   );
-  static final TextStyle medium14 = semiBold.copyWith(
+  static final TextStyle medium14 = medium.copyWith(
     fontSize: 14,
     color: AppColors.secondaryColor,
   );
-  static final TextStyle medium16 = semiBold.copyWith(
+  static final TextStyle medium16 = medium.copyWith(
     fontSize: 16,
     color: Color(0xff51526C),
   );
-  static final TextStyle medium18 = semiBold.copyWith(
+  static final TextStyle medium18 = medium.copyWith(
     fontSize: 18,
     color: Colors.white,
+  );
+  static final TextStyle medium20 = medium.copyWith(
+    fontSize: 20,
+    color: AppColors.secondaryColor,
   );
   static final TextStyle medium24 = semiBold.copyWith(
     fontSize: 24,

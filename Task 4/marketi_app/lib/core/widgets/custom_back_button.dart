@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 
@@ -7,10 +8,14 @@ class CustomBackButton extends StatelessWidget {
     super.key,
   });
 
+  
+
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () => Navigator.pop(context),
+      onPressed: () {
+          context.pop();
+      },
       style: OutlinedButton.styleFrom(
         shape: CircleBorder(),
         side: const BorderSide(
