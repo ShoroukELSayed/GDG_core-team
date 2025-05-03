@@ -54,7 +54,7 @@ class FormValidator {
     if (!RegExp(r'\d').hasMatch(password)) {
       missingRequirements.add("one number");
     }
-    if (!RegExp(r'[@$!%*?&]').hasMatch(password)) {
+    if (!RegExp(r'[@$!%#*?&]').hasMatch(password)) {
       missingRequirements.add("one special character");
     }
 

@@ -24,6 +24,14 @@ class ForgotPasswordType extends StatelessWidget {
     return BlocConsumer<ForgotPassCubit, ForgotPassStates>(
       listener: (context, state) {
         if (state is ForgotPassSuccess) {
+          context.push(
+                    Routes.verificationCode,
+                    extra: {
+                      'type': isPhone ? 'phone' : 'email',
+                      'value':
+                          isPhone ? phoneController.text : emailController.text,
+                    },
+                  );
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Verification code sent')),
           );
@@ -67,14 +75,7 @@ class ForgotPasswordType extends StatelessWidget {
                         .read<ForgotPassCubit>()
                         .sendForgotPasswordEmail(email);
                   }
-                  context.push(
-                    Routes.verificationCode,
-                    extra: {
-                      'type': isPhone ? 'phone' : 'email',
-                      'value':
-                          isPhone ? phoneController.text : emailController.text,
-                    },
-                  );
+                  
                 }),
           ],
         );
