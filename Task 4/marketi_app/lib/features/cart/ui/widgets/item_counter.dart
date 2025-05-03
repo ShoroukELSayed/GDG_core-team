@@ -19,8 +19,8 @@ class _ItemCounterState extends State<ItemCounter> {
     return Row(
       children: [
         IconContainer(
-          onTap: (){
-            if(count > 1){
+          onTap: () {
+            if (count > 1) {
               count--;
             }
             setState(() {});
@@ -28,13 +28,13 @@ class _ItemCounterState extends State<ItemCounter> {
           icon: count == 1 ? Icons.delete : Icons.remove,
           color: count == 1 ? Colors.red : AppColors.primaryColor,
         ),
-        Spacer(),
+        const Spacer(),
         Container(
           width: 100,
           height: 40,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            color: AppColors.primaryColor.withOpacity(0.1),
+            color: AppColors.primaryColor.withValues(alpha: 0.1),
           ),
           child: Center(
             child: Text(
@@ -43,7 +43,7 @@ class _ItemCounterState extends State<ItemCounter> {
             ),
           ),
         ),
-        Spacer(),
+        const Spacer(),
         IconContainer(
           onTap: () {
             count++;

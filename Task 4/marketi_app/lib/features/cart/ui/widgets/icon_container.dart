@@ -20,7 +20,7 @@ class IconContainer extends StatelessWidget {
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.primaryColor.withOpacity(0.1),
+          color: AppColors.primaryColor.withValues(alpha: .1),
         ),
         child: Icon(icon,
           size: 30,

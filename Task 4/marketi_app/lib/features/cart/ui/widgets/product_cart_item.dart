@@ -4,16 +4,16 @@ import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/favorite_icon_button.dart';
 import 'package:marketi_app/core/widgets/star_icon_button.dart';
+import 'package:marketi_app/features/cart/data/models/product_cart_item_model.dart';
 import 'package:marketi_app/features/cart/ui/widgets/item_counter.dart';
 
 class ProductCartItem extends StatefulWidget {
-  const ProductCartItem({super.key, required this.productName, required this.productPrice, required this.productImage, required this.productDescription});
+  const ProductCartItem({
+    super.key,
+    required this.productCartItemModel,
+  });
 
-  final String productName;
-  final String productPrice;
-  final String productImage;
-  final String productDescription;
-
+  final ProductCartItemModel productCartItemModel;
   @override
   State<ProductCartItem> createState() => _ProductCartItemState();
 }
@@ -24,13 +24,13 @@ class _ProductCartItemState extends State<ProductCartItem> {
     return Container(
       width: double.infinity,
       height: 155,
-      margin: const EdgeInsets.only(left: 4, right: 4,bottom: 16),
+      margin: const EdgeInsets.only(left: 4, right: 4, bottom: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Color(0xffB2CCFF).withOpacity(0.5),
+            color: const Color(0xffB2CCFF).withValues(alpha: .5),
             blurRadius: 10,
           ),
         ],
@@ -40,7 +40,7 @@ class _ProductCartItemState extends State<ProductCartItem> {
         child: Row(
           children: [
             Image.asset(
-              widget.productImage,
+              widget.productCartItemModel.productImage,
               width: 120,
               height: 120,
               fit: BoxFit.cover,
@@ -53,26 +53,26 @@ class _ProductCartItemState extends State<ProductCartItem> {
                   Row(
                     children: [
                       Text(
-                        widget.productName,
+                        widget.productCartItemModel.productName,
                         style: AppStyles.medium14,
                       ),
                       const Spacer(),
-                      FavoriteIconButton(),
+                      const FavoriteIconButton(),
                     ],
                   ),
                   Text(
-                    widget.productDescription,
+                    widget.productCartItemModel.productDescription,
                     style: AppStyles.medium12
                         .copyWith(color: AppColors.hintTextColor),
                   ),
                   Row(
                     children: [
                       Text(
-                        widget.productPrice,
+                        widget.productCartItemModel.productPrice,
                         style: AppStyles.medium14,
                       ),
                       const Spacer(),
-                      StarIconButton(),
+                      const StarIconButton(),
                       Text(
                         '4.5',
                         style: AppStyles.medium12
@@ -80,7 +80,7 @@ class _ProductCartItemState extends State<ProductCartItem> {
                       ),
                     ],
                   ),
-                  ItemCounter(),
+                  const ItemCounter(),
                 ],
               ),
             ),

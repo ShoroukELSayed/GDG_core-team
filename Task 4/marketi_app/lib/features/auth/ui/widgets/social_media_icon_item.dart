@@ -16,7 +16,7 @@ class SocialMediaIconsItem extends StatelessWidget {
       onPressed: onPressed,
       icon: icon,
       style: IconButton.styleFrom(
-        shape: CircleBorder(
+        shape: const CircleBorder(
           side: BorderSide(
             color: AppColors.outlinedColor,
           ),

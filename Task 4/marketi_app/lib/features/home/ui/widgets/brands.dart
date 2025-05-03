@@ -7,16 +7,16 @@ class Brands extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const BrandsItem(
+        BrandsItem(
           image: Assets.assetsImagesTownTeamLogo2,
         ),
-        const BrandsItem(
+        BrandsItem(
           image: Assets.assetsImagesJBLLogo2,
         ),
-        const BrandsItem(
+        BrandsItem(
           image: Assets.assetsImagesSONYLogo2,
         ),
       ],

@@ -8,16 +8,14 @@ class CustomBackButton extends StatelessWidget {
     super.key,
   });
 
-  
-
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-          context.pop();
+        context.pop();
       },
       style: OutlinedButton.styleFrom(
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         side: const BorderSide(
           color: AppColors.outlinedColor,
         ),

@@ -2,31 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 
-
+// ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({
+   CustomTextFormField({
     super.key,
     required this.hintText,
     required this.prefixIcon,
     this.suffixIcon,
+    required this.controller, required this.validator, this.obscureText = false, 
   });
 
   final String hintText;
   final Widget prefixIcon;
   final Widget? suffixIcon;
+  final TextEditingController controller;
+  final String? Function(String?) validator;
+  bool? obscureText;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool? passwordVisible = false;
-  final TextEditingController _userPasswordController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: _userPasswordController,
-      obscureText: !passwordVisible!,
+      controller: widget.controller,
+      validator: widget.validator,
+      obscureText: widget.obscureText!,
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: TextStyle(
@@ -38,16 +42,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         suffixIcon: widget.suffixIcon != null
             ? IconButton(
                 icon: Icon(
-                  passwordVisible!
-                      ? Icons.visibility
-                      : Icons.visibility_off,
-                  color: passwordVisible!
-                      ? AppColors.primaryColor
-                      : AppColors.secondaryColor,
+                  widget.obscureText! ? Icons.visibility_off : Icons.visibility,
+                  color: widget.obscureText!
+                      ? AppColors.secondaryColor
+                      : AppColors.primaryColor,
                 ),
                 onPressed: () {
                   setState(() {
-                    passwordVisible = !passwordVisible!;
+                    widget.obscureText = !widget.obscureText!;
                   });
                 })
             : null,

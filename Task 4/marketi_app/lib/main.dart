@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:marketi_app/core/routing/app_router.dart';
 
-void main() {
+void main() async {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => MarketiApp(),
+      builder: (context) => const MarketiApp(),
     ),
   );
 }
@@ -31,7 +31,7 @@ class MarketiApp extends StatelessWidget {
         // ),
       ),
       debugShowCheckedModeBanner: false,
-      routerConfig:AppRouter.router ,
+      routerConfig: AppRouter.router,
     );
   }
 }

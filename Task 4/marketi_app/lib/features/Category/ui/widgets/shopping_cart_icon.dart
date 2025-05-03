@@ -8,7 +8,7 @@ class ShoppingCartIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Icon(
+        const Icon(
           Icons.shopping_cart_outlined,
           color: AppColors.primaryColor,
           size: 30,
@@ -27,7 +27,11 @@ class ShoppingCartIcon extends StatelessWidget {
               color: AppColors.primaryColor,
               shape: BoxShape.circle,
             ),
-            child: Center(child: Text('3',style: TextStyle(color: Colors.white),)),
+            child: const Center(
+                child: Text(
+              '3',
+              style: TextStyle(color: Colors.white),
+            )),
           ),
         ),
       ],

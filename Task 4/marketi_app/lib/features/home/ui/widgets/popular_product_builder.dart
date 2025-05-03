@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
+import 'package:marketi_app/features/home/data/models/product_item_model.dart';
 import 'package:marketi_app/features/home/ui/widgets/product_item.dart';
 
 class PopularProductBuilder extends StatefulWidget {
@@ -11,26 +12,34 @@ class PopularProductBuilder extends StatefulWidget {
 
 class _PopularProductBuilderState extends State<PopularProductBuilder> {
   List<ProductItem> popularProducts = [
-    const ProductItem(
-      productImage: Assets.assetsImagesSmartWatch,
-      productName: 'Smart Watch',
-      productPrice: '499 LE',
-      productDiscount: '15% OFF',
+    ProductItem(
+      productItemModel: ProductItemModel(
+        productImage: Assets.assetsImagesSmartWatch,
+        productName: 'Smart Watch',
+        productPrice: '499 LE',
+        productDiscount: '15% OFF',
+      ),
     ),
-    const ProductItem(
-      productImage: Assets.assetsImagesIPhone11Pro,
-      productName: 'iPhone 11 Pro',
-      productPrice: '19999 LE',
+    ProductItem(
+      productItemModel: ProductItemModel(
+        productImage: Assets.assetsImagesIPhone11Pro,
+        productName: 'iPhone 11 Pro',
+        productPrice: '19999 LE',
+      ),
     ),
-    const ProductItem(
-      productImage: Assets.assetsImagesAnkleBoots,
-      productName: 'Women’s Ankle boots',
-      productPrice: '499 LE',
+    ProductItem(
+      productItemModel: ProductItemModel(
+        productImage: Assets.assetsImagesAnkleBoots,
+        productName: 'Women’s Ankle boots',
+        productPrice: '499 LE',
+      ),
     ),
-    const ProductItem(
-      productImage: Assets.assetsImagesCamera,
-      productName: 'Canon 5D Camera',
-      productPrice: '4999 LE',
+    ProductItem(
+      productItemModel: ProductItemModel(
+        productImage: Assets.assetsImagesCamera,
+        productName: 'Canon 5D Camera',
+        productPrice: '4999 LE',
+      ),
     ),
   ];
   @override
@@ -38,6 +47,7 @@ class _PopularProductBuilderState extends State<PopularProductBuilder> {
     return SizedBox(
       height: 170,
       child: ListView.builder(
+        padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
         itemCount: popularProducts.length,
         itemBuilder: (context, index) {

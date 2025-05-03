@@ -9,22 +9,23 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-              decoration: InputDecoration(
-                hintText: 'What are you looking for ? ',
-                hintStyle: AppStyles.regular16,
-                enabledBorder: _outlineInputBorder(),
-                focusedBorder: _outlineInputBorder(),
-                border: _outlineInputBorder(),
-                prefixIcon: Icon(
-                  Icons.search,
-                  size: 40,
-                  color: AppColors.secondaryColor,
-                ),
-                suffixIcon: Image.asset(Assets.assetsImagesFilterIcon),
-              ),
-            );
+      decoration: InputDecoration(
+        hintText: 'What are you looking for ? ',
+        hintStyle: AppStyles.regular16,
+        enabledBorder: _outlineInputBorder(),
+        focusedBorder: _outlineInputBorder(),
+        border: _outlineInputBorder(),
+        prefixIcon: const Icon(
+          Icons.search,
+          size: 40,
+          color: AppColors.secondaryColor,
+        ),
+        suffixIcon: Image.asset(Assets.assetsImagesFilterIcon),
+      ),
+    );
   }
-   OutlineInputBorder _outlineInputBorder({Color? color}) => OutlineInputBorder(
+
+  OutlineInputBorder _outlineInputBorder({Color? color}) => OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide(
           color: color ?? AppColors.outlinedColor,

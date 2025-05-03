@@ -1,0 +1,1081 @@
+{
+	"info": {
+		"_postman_id": "99e3f949-9efd-4e66-bd58-153fe19ed620",
+		"name": "Marketi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29145281"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "basic-auth",
+					"item": [
+						{
+							"name": "signUp",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\":\"mohamedabdelmaboud03@gmail.com\",\r\n    \"password\":\"asd246810#D\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/signIn",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signIn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"abdo\",\r\n    \"phone\": \"012\",\r\n    \"email\": \"mohamedabdelmaboud03@gmail.com\",\r\n    \"password\": \"asd246810#D\",\r\n    \"confirmPassword\": \"asd246810#D\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/signUp",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signUp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "reset-password",
+					"item": [
+						{
+							"name": "reset-pass-request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"mohamedabdelmaboud03@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/sendPassEmail",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"sendPassEmail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "active-reset-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"mohamedabdelmaboud03@gmail.com\",\r\n    \"code\":\"548970\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/activeResetPass",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"activeResetPass"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"email\":\"mohamedabdlmabod03@gmail.com\",\r\n    \"password\":\"asd246810#Dg\",\r\n    \"confirmPassword\":\"asd246810#Dg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/resetPassword",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"resetPassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "oAuth",
+					"item": [
+						{
+							"name": "google-OAuth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/oAuth/google",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"oAuth",
+										"google"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "facebook-OAuth",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/oAuth/facebook",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"oAuth",
+										"facebook"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signOut",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/auth/oAuth/signOut",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"oAuth",
+										"signOut"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "home",
+			"item": [
+				{
+					"name": "products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skip\": \"\",\r\n    \"search\": \"\",\r\n    \"brand\": \"\",\r\n    \"category\": \"\",\r\n    \"rating\": \"\",\r\n    \"price\": \"\",\r\n    \"discount\": \"\",\r\n    \"popular\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/home/products",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/home/brands",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/home/categories",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "banners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/home/banners",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"banners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top-search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/home/topSearch",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"topSearch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user-shop",
+					"item": [
+						{
+							"name": "add-product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/C:/Users/MohNasr/Downloads/Round_Rect.png",
+												"/C:/Users/MohNasr/Downloads/Colorful Modern Infinity Technology Free Logo (1).png"
+											]
+										},
+										{
+											"key": "title",
+											"value": "Intelligent Wooden Fish",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "77",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Adipisci ipsum est perspiciatis ut veniam numquam voluptatem quia. Qui…",
+											"type": "text"
+										},
+										{
+											"key": "locationName",
+											"value": "egypt",
+											"type": "text"
+										},
+										{
+											"key": "coordinatesX",
+											"value": "178.8733",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "43",
+											"type": "text"
+										},
+										{
+											"key": "remain",
+											"value": "82",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "pc",
+											"type": "text"
+										},
+										{
+											"key": "brand",
+											"value": "canon",
+											"type": "text"
+										},
+										{
+											"key": "coordinatesY",
+											"value": "171.1125",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "666c2a8fed418f11fb47d042",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/addProduct",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/C:/Users/MohNasr/Downloads/Colorful Modern Infinity Technology Free Logo.png",
+												"/C:/Users/MohNasr/Downloads/Round_Rect.png"
+											]
+										},
+										{
+											"key": "title",
+											"value": "Intelligent Wooden Fish",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "77",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Adipisci ipsum est perspiciatis ut veniam numquam voluptatem quia. Qui…",
+											"type": "text"
+										},
+										{
+											"key": "locationName",
+											"value": "egypt",
+											"type": "text"
+										},
+										{
+											"key": "coordinatesX",
+											"value": "178.8733",
+											"type": "text"
+										},
+										{
+											"key": "coordinatesY",
+											"value": "171.1125",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "43",
+											"type": "text"
+										},
+										{
+											"key": "remain",
+											"value": "82",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "pc",
+											"type": "text"
+										},
+										{
+											"key": "brand",
+											"value": "canon",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/editProduct",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"editProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/deleteProduct",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"deleteProduct"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user-cart",
+					"item": [
+						{
+							"name": "get-cart",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/getCart",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getCart"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/addCart",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addCart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/deleteCart",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"deleteCart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user-favorite",
+					"item": [
+						{
+							"name": "get-favorite",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/getFavorite",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"getFavorite"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-favorite",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/addFavorite",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addFavorite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-favorite",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://marketi-app.onrender.com/api/v1/user/deleteFavorite",
+									"protocol": "https",
+									"host": [
+										"marketi-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"deleteFavorite"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add-rate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":\"\",\r\n    \"productId\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/user/addRate",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"addRate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"userId\":\"\", \r\n    \"products\":[\r\n        {\r\n            \"product\":{},\r\n            \"quantity\":1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/user/checkout",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buy-again",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/user/getBuyAgain",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"getBuyAgain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "portfolio",
+			"item": [
+				{
+					"name": "user_data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/portfoilo/userData",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portfoilo",
+								"userData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/MohNasr/Downloads/Colorful Modern Infinity Technology Free Logo (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/portfoilo/addImage",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portfoilo",
+								"addImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_user_data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"\",\r\n  \"email\": \"\",\r\n  \"gender\": \"\",\r\n  \"image\": \"\",\r\n  \"type\": \"\",\r\n  \"address\": \"\",\r\n  \"phone\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://marketi-app.onrender.com/api/v1/portfoilo/editUserData",
+							"protocol": "https",
+							"host": [
+								"marketi-app",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portfoilo",
+								"editUserData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

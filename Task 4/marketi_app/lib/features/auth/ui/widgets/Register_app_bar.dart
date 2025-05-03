@@ -8,13 +8,11 @@ class RegisterAppBar extends StatelessWidget {
   });
 
   @override
-
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomBackButton(
-        ),
+        const CustomBackButton(),
         Image.asset(
           Assets.assetsImagesLogoSplashScreen,
           height: 160,

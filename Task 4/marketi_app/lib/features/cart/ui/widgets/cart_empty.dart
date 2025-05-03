@@ -16,20 +16,20 @@ class CartEmpty extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            Gap(30),
+            const Gap(30),
             Image.asset(Assets.assetsImagesIllustrationCartEmpty),
-            Gap(22),
+            const Gap(22),
             Text(
               'Your Cart is Empty',
               style: AppStyles.medium24,
             ),
-            Gap(30),
+            const Gap(30),
             Text(
               'Check our big offers, fresh products \n and fill your cart with items',
               textAlign: TextAlign.center,
               style: AppStyles.medium16,
             ),
-            Gap(30),
+            const Gap(30),
             CustomButton.primary(
               text: 'Start Shopping',
               onPressed: () {

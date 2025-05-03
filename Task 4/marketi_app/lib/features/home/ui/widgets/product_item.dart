@@ -5,21 +5,15 @@ import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_button.dart';
 import 'package:marketi_app/core/widgets/favorite_icon_button.dart';
 import 'package:marketi_app/core/widgets/star_icon_button.dart';
+import 'package:marketi_app/features/home/data/models/product_item_model.dart';
 
 class ProductItem extends StatefulWidget {
-  const ProductItem(
-      {super.key,
-      required this.productName,
-      required this.productPrice,
-      required this.productImage,
-      this.productDiscount = '0%',
-      this.addToCart = false});
+  const ProductItem({
+    super.key,
+    required this.productItemModel,
+  });
 
-  final String productName;
-  final String productPrice;
-  final String productImage;
-  final String productDiscount;
-  final bool addToCart;
+  final ProductItemModel productItemModel;
 
   @override
   State<ProductItem> createState() => _ProductItemState();
@@ -35,13 +29,13 @@ class _ProductItemState extends State<ProductItem> {
           children: [
             Container(
               margin: const EdgeInsets.only(right: 16),
-              height: widget.addToCart ? 190 : 160,
+              height: widget.productItemModel.addToCart ? 190 : 160,
               width: 150,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffB2CCFF).withOpacity(0.5),
+                    color: const Color(0xffB2CCFF).withValues(alpha: .5),
                     blurRadius: 10,
                   ),
                 ],
@@ -55,9 +49,9 @@ class _ProductItemState extends State<ProductItem> {
                     margin: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(widget.productImage),
+                        image: AssetImage(widget.productItemModel.productImage),
                       ),
-                      color: Color(0xffD9E6FF),
+                      color: const Color(0xffD9E6FF),
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
@@ -68,13 +62,13 @@ class _ProductItemState extends State<ProductItem> {
                         Row(
                           children: [
                             Text(
-                              widget.productPrice,
+                              widget.productItemModel.productPrice,
                               style: AppStyles.medium12.copyWith(
                                 color: Colors.black,
                               ),
                             ),
                             const Spacer(),
-                            StarIconButton(),
+                            const StarIconButton(),
                             Text(
                               '4.9',
                               style: AppStyles.medium12.copyWith(
@@ -86,47 +80,47 @@ class _ProductItemState extends State<ProductItem> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            widget.productName,
+                            widget.productItemModel.productName,
                             style: AppStyles.medium12.copyWith(
                               color: Colors.black,
                             ),
                           ),
                         ),
-                        Gap(5),
-                        widget.addToCart
+                        const Gap(5),
+                        widget.productItemModel.addToCart
                             ? CustomButton.secondary(
                                 text: 'Add', onPressed: () {}, width: 100)
-                            : SizedBox(),
+                            : const SizedBox(),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            widget.productDiscount != '0%'
+            widget.productItemModel.productDiscount != '0%'
                 ? Positioned(
                     top: 4,
                     left: 4,
                     child: Container(
                       width: 82,
                       height: 24,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(Assets.assetsImagesDiscount),
                         ),
                       ),
                       child: Center(
                           child: Text(
-                        widget.productDiscount,
+                        widget.productItemModel.productDiscount,
                         style: AppStyles.medium12,
                       )),
                     ),
                   )
                 : const SizedBox(),
-            Positioned(
-                top: 8,
-                right: 24,
-                child: FavoriteIconButton(),
+            const Positioned(
+              top: 8,
+              right: 24,
+              child: FavoriteIconButton(),
             ),
           ],
         ),

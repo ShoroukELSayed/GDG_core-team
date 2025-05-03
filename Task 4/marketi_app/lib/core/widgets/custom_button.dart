@@ -8,26 +8,32 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double width;
   final double height;
-
+  final bool isLoading;
   const CustomButton({
     required this.text,
     required this.backgroundColor,
     required this.onPressed,
-    super.key, required this.width, required this.height,  
+    super.key,
+    this.isLoading = false,
+    required this.width,
+    required this.height,
   });
 
   const CustomButton.primary({
     required String text,
     required VoidCallback onPressed,
+    bool isLoading = false,
     double width = double.infinity,
     Key? key,
   }) : this(
-            text: text,
-            width: width,
-            height: 48,
-            backgroundColor: AppColors.primaryColor,
-            onPressed: onPressed,
-            key: key);
+          text: text,
+          width: width,
+          height: 48,
+          backgroundColor: AppColors.primaryColor,
+          onPressed: onPressed,
+          isLoading: isLoading,
+          key: key,
+        );
   const CustomButton.secondary({
     required String text,
     required VoidCallback onPressed,
@@ -53,7 +59,15 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Text(text, style: backgroundColor==Colors.white?AppStyles.medium18.copyWith(color: AppColors.primaryColor): AppStyles.medium18),
+      child: isLoading
+          ? const CircularProgressIndicator(
+              color: Colors.white,
+              strokeWidth: 2,
+            )
+          : Text(text,
+              style: backgroundColor == Colors.white
+                  ? AppStyles.medium18.copyWith(color: AppColors.primaryColor)
+                  : AppStyles.medium18),
     );
   }
 }

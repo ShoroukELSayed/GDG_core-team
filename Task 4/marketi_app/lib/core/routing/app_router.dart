@@ -8,7 +8,7 @@ import 'package:marketi_app/features/auth/ui/screens/register_screen.dart';
 import 'package:marketi_app/features/auth/ui/screens/verification_code_screen.dart';
 import 'package:marketi_app/features/home/ui/screens/home_screen.dart';
 import 'package:marketi_app/features/onBoarding/ui/screens/onboarding_screen.dart';
-import 'package:marketi_app/features/pampers/ui/screens/pampers_screen.dart';
+import 'package:marketi_app/features/Category/ui/screens/category_screen.dart';
 import 'package:marketi_app/features/splash/ui/screens/splash_screen.dart';
 import 'package:marketi_app/navigation_screen.dart';
 
@@ -36,16 +36,21 @@ class AppRouter {
         builder: (context, state) => ForgotPasswordScreen(),
       ),
       GoRoute(
-        path: Routes.verificationCode ,
-        builder: (context, state) =>  VerificationCodeScreen(
-          verificationType: state.extra as String,
-          //solution
-        ),
+        path: Routes.verificationCode,
+        builder: (context, state) {
+          final extra = state.extra as Map<String, dynamic>;
+          return VerificationCodeScreen(
+            verificationType: extra['type'],
+            email: extra['value'],
+          );
+        },
       ),
       GoRoute(
-        path: Routes.createNewPassword,
-        builder: (context, state) => const CreateNewPasswordScreen(),
-      ),
+          path: Routes.createNewPassword,
+          builder: (context, state) {
+            final email = state.extra as String;
+            return CreateNewPasswordScreen(email: email);
+          }),
       GoRoute(
         path: Routes.congratulations,
         builder: (context, state) => const CongratulationsScreen(),
@@ -59,8 +64,8 @@ class AppRouter {
         builder: (context, state) => const NavigationScreen(),
       ),
       GoRoute(
-        path: Routes.pampers,
-        builder: (context, state) => const PampersScreen(),
+        path: Routes.category,
+        builder: (context, state) => const CategoryScreen(),
       ),
     ],
   );

@@ -13,14 +13,14 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ProfilePhoto(),
-        Gap(10),
+        const ProfilePhoto(),
+        const Gap(10),
         Text(
           'Hi Shorouk !',
           style: AppStyles.semiBold20,
         ),
-        Spacer(),
-        NotificationsIcon()
+        const Spacer(),
+        const NotificationsIcon()
       ],
     );
   }

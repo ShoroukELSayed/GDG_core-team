@@ -51,7 +51,7 @@ class AppStyles {
   );
   static final TextStyle medium16 = medium.copyWith(
     fontSize: 16,
-    color: Color(0xff51526C),
+    color: const Color(0xff51526C),
   );
   static final TextStyle medium18 = medium.copyWith(
     fontSize: 18,

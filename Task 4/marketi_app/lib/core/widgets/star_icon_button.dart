@@ -19,10 +19,16 @@ class _StarIconButtonState extends State<StarIconButton> {
         isStarred = !isStarred;
         setState(() {});
       },
-      icon: isStarred ? const Icon(Icons.star, size: 18,color: AppColors.secondaryColor,) : Icon(
-        Icons.star_border,
-        size: 18,
-      ),
+      icon: isStarred
+          ? const Icon(
+              Icons.star,
+              size: 18,
+              color: AppColors.secondaryColor,
+            )
+          : const Icon(
+              Icons.star_border,
+              size: 18,
+            ),
     );
   }
 }

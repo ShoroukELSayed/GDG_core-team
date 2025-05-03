@@ -3,7 +3,10 @@ import 'package:marketi_app/core/utils/app_styles.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem(
-      {super.key, required this.categoryName, required this.categoryImage, this.onTap});
+      {super.key,
+      required this.categoryName,
+      required this.categoryImage,
+      this.onTap});
 
   final String categoryName, categoryImage;
   final VoidCallback? onTap;
@@ -19,7 +22,7 @@ class CategoryItem extends StatelessWidget {
             height: 96,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color(0xffB2CCFF).withOpacity(0.7),
+                color: const Color(0xffB2CCFF).withValues(alpha: .7),
               ),
               borderRadius: BorderRadius.circular(8),
               image: DecorationImage(

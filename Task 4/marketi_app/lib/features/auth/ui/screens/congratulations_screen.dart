@@ -18,20 +18,20 @@ class CongratulationsScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16, top: 44),
         child: Column(
           children: [
-            CustomAppBar(title: ''),
-            Gap(44),
+            const CustomAppBar(title: ''),
+            const Gap(44),
             Image.asset(Assets.assetsImagesIllustrationCongratulations),
-            Gap(22),
+            const Gap(22),
             Text(
               'Congratulations',
               style: AppStyles.medium24,
             ),
-            Gap(22),
+            const Gap(22),
             Text(
               'You have updated the password. please\n login again with your latest password',
               style: AppStyles.medium16,
             ),
-            Gap(22),
+            const Gap(22),
             CustomButton.primary(
               text: 'Log In',
               onPressed: () {

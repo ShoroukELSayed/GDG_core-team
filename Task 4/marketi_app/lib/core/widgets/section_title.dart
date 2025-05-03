@@ -18,7 +18,7 @@ class SectionTitle extends StatelessWidget {
           name,
           style: AppStyles.semiBold20,
         ),
-        Spacer(),
+        const Spacer(),
         TextButton(
           onPressed: () {},
           child: Text(

@@ -15,22 +15,22 @@ class SuccessOrderScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
         child: Column(
           children: [
-            CustomBodyAppBar(
+            const CustomBodyAppBar(
               title: 'Checkout',
             ),
-            Gap(44),
+            const Gap(44),
             Image.asset(Assets.assetsImagesIllustrationSuccessOrder),
-            Gap(22),
+            const Gap(22),
             Text(
               'Thank You!',
               style: AppStyles.medium24,
             ),
-            Gap(30),
+            const Gap(30),
             Text(
               'Woah, You Have sucessfully orderd',
               style: AppStyles.medium16,
             ),
-            Gap(30),
+            const Gap(30),
             CustomButton.primary(
               text: 'Go Home',
               onPressed: () {},

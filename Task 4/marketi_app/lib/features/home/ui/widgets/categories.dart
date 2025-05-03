@@ -17,20 +17,20 @@ class Categories extends StatelessWidget {
           children: [
             CategoryItem(
               onTap: () {
-                context.go(Routes.pampers);
+                context.push(Routes.category);
               },
               categoryName: 'Pampers',
               categoryImage: Assets.assetsImagesPampers,
             ),
-            CategoryItem(
+            const CategoryItem(
                 categoryName: 'Electronics',
                 categoryImage: Assets.assetsImagesElectronics),
-            CategoryItem(
+            const CategoryItem(
                 categoryName: 'Plants',
                 categoryImage: Assets.assetsImagesPlant),
           ],
         ),
-        Row(
+        const Row(
           spacing: 16,
           children: [
             CategoryItem(

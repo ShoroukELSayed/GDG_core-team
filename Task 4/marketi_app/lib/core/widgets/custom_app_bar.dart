@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomBackButton(),
+        const CustomBackButton(),
         Text(
           title,
           style: AppStyles.medium16,

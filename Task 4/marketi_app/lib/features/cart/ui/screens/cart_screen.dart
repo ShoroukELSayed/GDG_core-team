@@ -22,17 +22,17 @@ class _CartScreenState extends State<CartScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 Text(
                   'Cart',
                   style: AppStyles.semiBold20,
                 ),
-                Spacer(),
-                ProfilePhoto(),
+                const Spacer(),
+                const ProfilePhoto(),
               ],
             ),
           ),
-          CartEmpty()
+          const CartEmpty()
         ],
       ),
     );

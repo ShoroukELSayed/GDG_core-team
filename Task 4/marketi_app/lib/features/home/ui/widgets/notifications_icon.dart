@@ -10,7 +10,7 @@ class NotificationsIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Icon(
+        const Icon(
           Icons.notifications_none_outlined,
           color: AppColors.primaryColor,
           size: 30,
@@ -21,7 +21,7 @@ class NotificationsIcon extends StatelessWidget {
           child: Container(
             height: 8,
             width: 8,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppColors.primaryColor,
               shape: BoxShape.circle,
             ),

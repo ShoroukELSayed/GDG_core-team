@@ -15,10 +15,10 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
-    HomeScreen(),
-    CartScreen(),
-    SuccessOrderScreen(),
-    SearchNotFoundScreen(),
+    const HomeScreen(),
+    const CartScreen(),
+    const SuccessOrderScreen(),
+    const SearchNotFoundScreen(),
     // FavoriteScreen(),
     // MenuScreen(),
   ];
@@ -36,12 +36,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
         selectedItemColor: AppColors.primaryColor,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          const BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), label: 'Cart'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.favorite), label: 'Favorite'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+          const BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),
     );

@@ -28,37 +28,37 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: ListView(
           children: [
-            HomeAppBar(),
-            Gap(14),
-            SearchField(),
-            Gap(14),
-            OffersBuilder(),
-            Gap(14),
-            SectionTitle(
+            const HomeAppBar(),
+            const Gap(14),
+            const SearchField(),
+            const Gap(14),
+            const OffersBuilder(),
+            const Gap(14),
+            const SectionTitle(
               name: 'Popular Products',
             ),
-            PopularProductBuilder(),
-            Gap(14),
-            SectionTitle(
+            const PopularProductBuilder(),
+            const Gap(14),
+            const SectionTitle(
               name: 'Category',
             ),
             const Gap(14),
-            Categories(),
+            const Categories(),
             const Gap(14),
-            SectionTitle(
+            const SectionTitle(
               name: 'Best for You',
             ),
-            BestForYou(),
+            const BestForYou(),
             const Gap(14),
-            SectionTitle(
+            const SectionTitle(
               name: 'Brands',
             ),
-            Brands(),
+            const Brands(),
             const Gap(14),
-            SectionTitle(
+            const SectionTitle(
               name: 'Buy Again',
             ),
-            BuyAgain(),
+            const BuyAgain(),
           ],
         ),
       ),

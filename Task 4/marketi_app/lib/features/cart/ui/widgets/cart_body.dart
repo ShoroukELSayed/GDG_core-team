@@ -22,7 +22,7 @@ class CartBody extends StatelessWidget {
             ),
           ),
           const ProductOnCartBuilder(),
-          Checkout(),
+          const Checkout(),
         ],
       ),
     );

@@ -3,17 +3,17 @@ import 'package:gap/gap.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_back_button.dart';
 import 'package:marketi_app/features/home/ui/widgets/search_field.dart';
-import 'package:marketi_app/features/pampers/ui/widgets/Shopping_cart_icon.dart';
-import 'package:marketi_app/features/pampers/ui/widgets/pampers_products_builder.dart';
+import 'package:marketi_app/features/Category/ui/widgets/Shopping_cart_icon.dart';
+import 'package:marketi_app/features/Category/ui/widgets/category_products_builder.dart';
 
-class PampersScreen extends StatefulWidget {
-  const PampersScreen({super.key});
+class CategoryScreen extends StatefulWidget {
+  const CategoryScreen({super.key});
 
   @override
-  State<PampersScreen> createState() => _PampersScreenState();
+  State<CategoryScreen> createState() => _CategoryScreenState();
 }
 
-class _PampersScreenState extends State<PampersScreen> {
+class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,20 +23,20 @@ class _PampersScreenState extends State<PampersScreen> {
           children: [
             Row(
               children: [
-                CustomBackButton(),
+                const CustomBackButton(),
                 const Spacer(),
                 Text(
                   'Pampers',
                   style: AppStyles.semiBold20,
                 ),
                 const Spacer(),
-                ShoppingCartIcon(),
+                const ShoppingCartIcon(),
               ],
             ),
-            Gap(14),
-            SearchField(),
-            PampersProductsBuilder(),
-            Gap(14),
+            const Gap(14),
+            const SearchField(),
+            const CategoryProductsBuilder(),
+            const Gap(14),
           ],
         ),
       ),

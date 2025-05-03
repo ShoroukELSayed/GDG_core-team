@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
+import 'package:marketi_app/features/home/data/models/product_item_model.dart';
 import 'package:marketi_app/features/home/ui/widgets/product_item.dart';
 
 class BestForYou extends StatefulWidget {
@@ -12,24 +13,30 @@ class BestForYou extends StatefulWidget {
 class _BestForYouState extends State<BestForYou> {
   List<ProductItem> bestForYou = [
     ProductItem(
-      productName: 'Black JBL Airbods',
-      productPrice: '799 LE',
-      productImage: Assets.assetsImagesAirBudsPic,
-      productDiscount: '10% OFF',
-      addToCart: true,
+      productItemModel: ProductItemModel(
+        productName: 'Black JBL Airbods',
+        productPrice: '799 LE',
+        productImage: Assets.assetsImagesAirBudsPic,
+        productDiscount: '10% OFF',
+        addToCart: true,
+      ),
     ),
     ProductItem(
-      productName: 'Sony Smart TV 55 inch ',
-      productPrice: '13999 LE',
-      productImage: Assets.assetsImagesSmartTV,
-      addToCart: true,
+      productItemModel: ProductItemModel(
+        productName: 'Sony Smart TV 55 inch ',
+        productPrice: '13999 LE',
+        productImage: Assets.assetsImagesSmartTV,
+        addToCart: true,
+      ),
     ),
     ProductItem(
-      productName: 'Black JBL Airbods',
-      productPrice: '799 LE',
-      productImage: Assets.assetsImagesAirBudsPic,
-      productDiscount: '10% OFF',
-      addToCart: true,
+      productItemModel: ProductItemModel(
+        productName: 'Black JBL Airbods',
+        productPrice: '799 LE',
+        productImage: Assets.assetsImagesAirBudsPic,
+        productDiscount: '10% OFF',
+        addToCart: true,
+      ),
     ),
   ];
   @override
@@ -37,6 +44,7 @@ class _BestForYouState extends State<BestForYou> {
     return SizedBox(
       height: 200,
       child: ListView.builder(
+        padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
         itemCount: bestForYou.length,
         itemBuilder: (context, index) {

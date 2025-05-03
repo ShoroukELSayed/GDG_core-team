@@ -9,6 +9,6 @@ class Routes {
   static const String congratulations = "/CongratulationsScreen";
   static const String home = "/HomeScreen";
   static const String navigation = "/NavigationScreen";
-  static const String pampers = "/PampersScreen";
+  static const String category = "/CategoryScreen";
   
 }

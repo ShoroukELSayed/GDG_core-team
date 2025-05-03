@@ -17,13 +17,13 @@ class PageIndicator extends HookWidget {
       controller: controller,
       count: 3,
       axisDirection: Axis.horizontal,
-      effect: WormEffect(
+      effect: const WormEffect(
         spacing: 8.0,
         radius: 10.0,
         dotWidth: 20.0,
         dotHeight: 20.0,
         strokeWidth: 1.5,
-        dotColor: const Color.fromARGB(120, 158, 158, 158),
+        dotColor: Color.fromARGB(120, 158, 158, 158),
         activeDotColor: AppColors.secondaryColor,
       ),
     );

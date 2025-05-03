@@ -22,7 +22,7 @@ class Remember extends StatelessWidget {
           'Remember Me',
           style: AppStyles.regular12,
         ),
-        Spacer(),
+        const Spacer(),
         TextButton(
             onPressed: () {
               context.push(Routes.forgotPassword);

@@ -16,11 +16,11 @@ class Checkout extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
-            BoxShadow(
-              color: Color(0xffB2CCFF).withOpacity(0.5),
-              blurRadius: 10,
-            ),
-          ],
+          BoxShadow(
+            color: const Color(0xffB2CCFF).withValues(alpha: 0.5),
+            blurRadius: 10,
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -41,7 +41,7 @@ class Checkout extends StatelessWidget {
                 ),
               ],
             ),
-            Gap(14),
+            const Gap(14),
             CustomButton.primary(text: 'Checkout', onPressed: () {})
           ],
         ),

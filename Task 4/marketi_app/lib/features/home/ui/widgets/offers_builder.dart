@@ -21,6 +21,7 @@ class _OffersBuilderState extends State<OffersBuilder> {
     return SizedBox(
       height: 120,
       child: ListView.builder(
+        padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
         itemCount: offers.length,
         itemBuilder: (context, index) {

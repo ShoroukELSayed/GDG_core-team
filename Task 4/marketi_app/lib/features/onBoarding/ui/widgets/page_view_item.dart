@@ -27,22 +27,22 @@ class PageViewItem extends HookWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Gap(120),
+          const Gap(120),
           Image.asset(pageViewItemModel.image),
-          Gap(40),
+          const Gap(40),
           PageIndicator(controller: controller),
-          Gap(24),
+          const Gap(24),
           Text(
             pageViewItemModel.title,
             style: AppStyles.semiBold20,
           ),
-          Gap(40),
+          const Gap(40),
           Text(
             pageViewItemModel.description,
             style: AppStyles.medium14,
             textAlign: TextAlign.center,
           ),
-          Spacer(),
+          const Spacer(),
           CustomButton.primary(
             text: pageIndex == 2 ? 'Get Start' : 'Next',
             onPressed: () {
@@ -54,7 +54,7 @@ class PageViewItem extends HookWidget {
                     );
             },
           ),
-          Gap(48),
+          const Gap(48),
         ],
       ),
     );
