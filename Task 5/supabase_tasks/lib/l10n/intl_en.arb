@@ -1,0 +1,121 @@
+{
+  "@@locale": "en",
+
+  "@loginTitle": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "loginTitle": "Login",
+
+  "@registerTitle": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "registerTitle": "Register",
+
+  "@email": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "email": "Email",
+
+  "@password": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "password": "Password",
+
+  "@haveAccount": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "haveAccount": "You haven an account?",
+
+  "@havenotAccount": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "havenotAccount": "You haven't an account?",
+
+  "@loginSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "loginSuccess": "Login Success!",
+
+  "@registerSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "registerSuccess": "Register Success! ,check your email and confirm it",
+
+  "@home": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "home": "Home",
+
+  "@enterData": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "enterData": "Enter Student Data",
+
+  "@age": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "age": "Age",
+
+  "@name": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "name": "Name",
+
+  "@insert": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "insert": "Insert",
+
+  "@insertSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "insertSuccess": "Insert Success!",
+
+  "@studentInformation": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "studentInformation": "Students Information",
+
+  "@deleteSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "deleteSuccess": "Deleted successfully",
+
+  "@updateSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "updateSuccess": "Update Success!",
+
+  "@updateInformation": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "updateInformation": "Update Information",
+  "@noData": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "noData": "No Data Available",
+  "@delete": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "delete": "Delete"
+}

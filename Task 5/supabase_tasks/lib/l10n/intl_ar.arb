@@ -1,0 +1,116 @@
+{
+  "@@locale": "ar",
+  "@loginTitle": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "loginTitle": "تسجيل الدخول",
+
+  "@registerTitle": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "registerTitle": " تسجيل حساب",
+
+  "@email": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "email": "البريد الإلكتروني",
+
+  "@password": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "password": "كلمة المرور",
+
+  "@haveAccount": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "haveAccount": "هل لديك حساب؟",
+
+  "@havenotAccount": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "havenotAccount": "هل لديك حساب؟",
+
+  "@loginSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "loginSuccess": "تم تسجيل الدخول بنجاح!",
+
+  "@home": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "home": "الرئيسية",
+
+  "@enterData": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "enterData": "أدخل بيانات الطالب",
+
+  "@age": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "age": "العمر",
+
+  "@name": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "name": "الاسم",
+
+  "@insert": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "insert": "إدخال",
+
+  "@insertSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "insertSuccess": "تم الإدخال بنجاح!",
+
+  "@studentInformation": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "studentInformation": "معلومات الطلاب",
+
+  "@deleteSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "deleteSuccess": "تم الحذف بنجاح!",
+
+  "@updateSuccess": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "updateSuccess": "تم التحديث بنجاح!",
+
+  "@updateInformation": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "updateInformation": "تحديث المعلومات"
+  ,
+  "@noData"
+  : {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "noData" : "لا يوجد بيانات",
+  "@delete": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "delete": "حذف"
+}
