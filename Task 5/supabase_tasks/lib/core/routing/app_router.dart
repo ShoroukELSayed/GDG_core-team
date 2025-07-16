@@ -4,7 +4,6 @@ import 'package:supabase_tasks/features/home/ui/views/home_view.dart';
 import 'package:supabase_tasks/features/login/ui/views/login_view.dart';
 import 'package:supabase_tasks/features/login/ui/views/register_view.dart';
 import 'package:supabase_tasks/features/splash/ui/views/splash_view.dart';
-import 'package:supabase_tasks/features/userInfo/ui/view/user_info.dart';
 import 'package:supabase_tasks/features/userInfo/ui/view/user_info_view.dart';
 
 class AppRouter {
