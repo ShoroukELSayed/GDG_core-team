@@ -6,8 +6,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabase_tasks/core/routing/app_router.dart';
 import 'package:supabase_tasks/core/services/operation_on_tables.dart';
+import 'package:supabase_tasks/features/login/logic/cubits/language_cubit.dart';
 import 'package:supabase_tasks/features/userInfo/logic/cubit/data_cubit_cubit.dart';
-import 'package:supabase_tasks/features/userInfo/logic/update_data/update_cubit.dart';
 import 'package:supabase_tasks/generated/l10n.dart';
 
 void main() async {
@@ -19,9 +19,15 @@ void main() async {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2cWdvZnVudnlndmV5dHFuaml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1NjEzNTksImV4cCI6MjA2NzEzNzM1OX0.XnzKtjcba3vKdSE6_aTBWxVRvlD5FzPj6aNpU2Y0OO4",
   );
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const SupabaseTask(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => LanguageCubit()),
+        BlocProvider(create: (context) => DataCubit(OperationOnTables())),
+      ],
+      child: DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const SupabaseTask(),
+      ),
     ),
   );
 }
@@ -31,20 +37,17 @@ class SupabaseTask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DataCubit(OperationOnTables())..getData(),
-      child: MaterialApp.router(
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.delegate.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        locale: DevicePreview.locale(context),
-        routerConfig: AppRouter.router,
-      ),
+    return MaterialApp.router(
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [const Locale('en'), const Locale('ar')],
+      debugShowCheckedModeBanner: false,
+      locale: context.watch<LanguageCubit>().state,
+      routerConfig: AppRouter.router,
     );
   }
 }

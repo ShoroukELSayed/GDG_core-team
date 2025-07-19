@@ -253,6 +253,46 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Change Language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change Language',
+      name: 'changeLanguage',
+      desc: 'A simple greeting message',
+      args: [],
+    );
+  }
+
+  /// `Select your preferred language.`
+  String get selectLanguage {
+    return Intl.message(
+      'Select your preferred language.',
+      name: 'selectLanguage',
+      desc: 'A message indicating that the language has been changed',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: 'A message indicating that the language has been changed',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: 'A message indicating that the language has been changed',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

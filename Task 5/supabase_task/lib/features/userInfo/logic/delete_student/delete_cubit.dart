@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:supabase_task/core/services/operation_on_tables.dart';
+import 'package:supabase_tasks/core/services/operation_on_tables.dart';
 import 'delete_states.dart';
 
 class DeleteCubit extends Cubit<DeleteStates> {
@@ -10,7 +10,7 @@ class DeleteCubit extends Cubit<DeleteStates> {
     emit(DeleteLoading());
     try {
       await _operation.delete(id:id); 
-      final newData = await OperationOnTables.getData();
+      final newData = await _operation.getData();
       emit(DeleteSuccessWithData(newData));
     } catch (e) {
       emit(DeleteError("Delete failed"));

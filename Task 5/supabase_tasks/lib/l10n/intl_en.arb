@@ -117,5 +117,29 @@
     "description": "A simple greeting message",
     "type": "text"
   },
-  "delete": "Delete"
+  "delete": "Delete",
+
+  "@changeLanguage": {
+    "description": "A simple greeting message",
+    "type": "text"
+  },
+  "changeLanguage": "Change Language",
+
+  "@selectLanguage": {
+    "description": "A message indicating that the language has been changed",
+    "type": "text"
+  },
+  "selectLanguage": "Select your preferred language.",
+
+  "@english": {
+    "description": "A message indicating that the language has been changed",
+    "type": "text"
+  },
+  "english": "English",
+
+  "@arabic": {
+    "description": "A message indicating that the language has been changed",
+    "type": "text"
+  },
+  "arabic": "Arabic"
 }

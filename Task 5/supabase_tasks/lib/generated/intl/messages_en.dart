@@ -23,11 +23,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "age": MessageLookupByLibrary.simpleMessage("Age"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "deleteSuccess": MessageLookupByLibrary.simpleMessage(
       "Deleted successfully",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "enterData": MessageLookupByLibrary.simpleMessage("Enter Student Data"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "You haven an account?",
@@ -47,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Register Success! ,check your email and confirm it",
     ),
     "registerTitle": MessageLookupByLibrary.simpleMessage("Register"),
+    "selectLanguage": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language.",
+    ),
     "studentInformation": MessageLookupByLibrary.simpleMessage(
       "Students Information",
     ),
