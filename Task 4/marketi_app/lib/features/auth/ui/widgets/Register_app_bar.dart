@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 import 'package:marketi_app/core/widgets/custom_back_button.dart';
 
@@ -15,7 +16,7 @@ class RegisterAppBar extends StatelessWidget {
         const CustomBackButton(),
         Image.asset(
           Assets.assetsImagesLogoSplashScreen,
-          height: 160,
+          height: 160.h,
         ),
       ],
     );

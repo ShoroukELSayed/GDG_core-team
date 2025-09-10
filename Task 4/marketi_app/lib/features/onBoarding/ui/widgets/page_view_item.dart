@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketi_app/core/routing/routes.dart';
@@ -22,21 +23,21 @@ class PageViewItem extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding:  EdgeInsets.all(16.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Gap(120),
+          Gap(120.h),
           Image.asset(pageViewItemModel.image),
-          const Gap(40),
+          Gap(40.h),
           PageIndicator(controller: controller),
-          const Gap(24),
+          Gap(24.h),
           Text(
             pageViewItemModel.title,
             style: AppStyles.semiBold20,
           ),
-          const Gap(40),
+          Gap(40.h),
           Text(
             pageViewItemModel.description,
             style: AppStyles.medium14,
@@ -54,7 +55,7 @@ class PageViewItem extends HookWidget {
                     );
             },
           ),
-          const Gap(48),
+          Gap(48.h),
         ],
       ),
     );

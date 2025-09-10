@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
-   CustomTextFormField({
+  CustomTextFormField({
     super.key,
     required this.hintText,
     required this.prefixIcon,
     this.suffixIcon,
-    required this.controller, required this.validator, this.obscureText = false, 
+    required this.controller,
+    required this.validator,
+    this.obscureText = false,
   });
 
   final String hintText;
@@ -24,7 +27,6 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -34,17 +36,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: TextStyle(
-          color: AppColors.hintTextColor,
+          color: AppColors.placeholder,
           fontStyle: AppStyles.regular12.fontStyle,
         ),
         prefixIcon: widget.prefixIcon,
-        prefixIconColor: AppColors.secondaryColor,
+        prefixIconColor: AppColors.dartBlue900,
         suffixIcon: widget.suffixIcon != null
             ? IconButton(
                 icon: Icon(
                   widget.obscureText! ? Icons.visibility_off : Icons.visibility,
                   color: widget.obscureText!
-                      ? AppColors.secondaryColor
+                      ? AppColors.dartBlue900
                       : AppColors.primaryColor,
                 ),
                 onPressed: () {
@@ -61,9 +63,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   OutlineInputBorder _outlineInputBorder({Color? color}) => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         borderSide: BorderSide(
-          color: color ?? AppColors.outlinedColor.withValues(alpha: 0.70),
+          color: color ?? AppColors.rect.withValues(alpha: 0.70),
         ),
       );
 }

@@ -1,18 +1,16 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketi_app/core/helper/form_validator.dart';
 import 'package:marketi_app/core/routing/routes.dart';
-import 'package:marketi_app/core/services/login_request.dart';
+import 'package:marketi_app/features/auth/data/models/login_models.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_button.dart';
 import 'package:marketi_app/core/widgets/custom_text_form_field.dart';
-import 'package:marketi_app/features/auth/logic/login_cubit/login_cubit.dart';
-import 'package:marketi_app/features/auth/logic/login_cubit/login_states.dart';
+import 'package:marketi_app/features/auth/data/logic/auth_cubit/auth_cubit.dart';
 import 'package:marketi_app/features/auth/ui/widgets/remember.dart';
 import 'package:marketi_app/features/auth/ui/widgets/rich_text_section.dart';
 import 'package:marketi_app/features/auth/ui/widgets/social_media_icons.dart';
@@ -33,17 +31,16 @@ class _LoginBodyState extends State<LoginBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginCubit, LoginStates>(
+    return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
           context.go(Routes.navigation);
           ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text("Login Success!")));
+              .showSnackBar(SnackBar(content: Text(state.response.message)));
         } else if (state is LoginError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('On Snap!')),
+            SnackBar(content: Text(state.errMessage)),
           );
-          log(state.errorMessage);
         }
       },
       builder: (context, state) {
@@ -51,7 +48,7 @@ class _LoginBodyState extends State<LoginBody> {
           key: key,
           autovalidateMode: autovalidateMode,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: ListView(
               children: [
                 Image.asset(Assets.assetsImagesLogoSplashScreen),
@@ -61,7 +58,7 @@ class _LoginBodyState extends State<LoginBody> {
                   hintText: 'Username or Email',
                   prefixIcon: const Icon(Icons.email_outlined),
                 ),
-                const Gap(14),
+                Gap(14.h),
                 CustomTextFormField(
                   controller: passwordController,
                   obscureText: true,
@@ -70,32 +67,32 @@ class _LoginBodyState extends State<LoginBody> {
                   prefixIcon: const Icon(Icons.lock_outline_rounded),
                   suffixIcon: const Icon(Icons.visibility_off),
                 ),
-                const Gap(6),
+                Gap(6.h),
                 const Remember(),
-                const Gap(21),
+                Gap(21.h),
                 CustomButton.primary(
                     isLoading: state is LoginLoading,
                     text: 'Log In',
-                    onPressed: () {
-                      if (key.currentState!.validate()) {
+                    onPressed: () async {
+                      if (key.currentState!.validate())  {
                         autovalidateMode = AutovalidateMode.disabled;
-                        final loginRequest = LoginRequest(
+                        final loginRequest = LoginRequestModel(
                           email: emailController.text,
                           password: passwordController.text,
                         );
-                        context.read<LoginCubit>().loginUser(loginRequest);
+                        context.read<AuthCubit>().loginUser(loginRequest);
                       } else {
                         setState(() {
                           autovalidateMode = AutovalidateMode.always;
                         });
                       }
                     }),
-                const Gap(14),
+                Gap(14.h),
                 Text('Or Continue With',
                     textAlign: TextAlign.center, style: AppStyles.regular12),
-                const Gap(16),
+                Gap(16.h),
                 const SocialMediaIcons(),
-                const Gap(14),
+                Gap(14.h),
                 const RichTextSection(),
               ],
             ),

@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:marketi_app/core/models/product_model.dart';
+import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 import 'package:marketi_app/core/widgets/custom_button.dart';
 
-class Checkout extends StatelessWidget {
-  const Checkout({
-    super.key,
+class CheckoutField extends StatefulWidget {
+  const CheckoutField({
+    super.key, required this.products,
   });
+  final List<ProductModel> products;
 
+  @override
+  State<CheckoutField> createState() => _CheckoutFieldState();
+}
+
+class _CheckoutFieldState extends State<CheckoutField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 107,
+      height: 110.h,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -23,26 +33,31 @@ class Checkout extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.sp),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Suptotal (3 items)',
+                  'Suptotal (${widget.products.length} items)',
                   style: AppStyles.semiBold14
-                      .copyWith(color: AppColors.secondaryColor),
+                      .copyWith(color: AppColors.dartBlue900),
                 ),
                 Text(
-                  'EGP 1,120,00',
+                  'EGP ${widget.products.map((e) => e.price).reduce((value, element) => value + element)}',
                   style: AppStyles.semiBold14
-                      .copyWith(color: AppColors.secondaryColor),
+                      .copyWith(color: AppColors.dartBlue900),
                 ),
               ],
             ),
-            const Gap(14),
-            CustomButton.primary(text: 'Checkout', onPressed: () {})
+            Gap(14.h),
+            CustomButton.primary(
+              text: 'Checkout',
+              onPressed: () {
+                context.push(Routes.checkout);
+              },
+            ),
           ],
         ),
       ),

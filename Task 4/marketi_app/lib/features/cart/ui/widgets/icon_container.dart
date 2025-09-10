@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 
 class IconContainer extends StatelessWidget {
@@ -16,14 +17,14 @@ class IconContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 40,
-        height: 40,
+        width: 60.w,
+        height: 40.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           color: AppColors.primaryColor.withValues(alpha: .1),
         ),
         child: Icon(icon,
-          size: 30,
+          size: 25.sp,
           color:color,
         ),
       ),

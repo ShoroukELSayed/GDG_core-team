@@ -8,9 +8,15 @@ class Assets {
 
   static const String assetsImagesAppleIcon = "assets/images/Apple_Icon.png";
 
+  static const String assetsImagesAvatar = "assets/images/avatar.png";
+
   static const String assetsImagesBackIcon = "assets/images/Back_Icon.png";
 
   static const String assetsImagesCamera = "assets/images/Camera.png";
+
+  static const String assetsImagesChatIcon = "assets/images/chat_icon.png";
+
+  static const String assetsImagesDeliveryIcon = "assets/images/Delivery_Icon.png";
 
   static const String assetsImagesDiscount = "assets/images/discount.png";
 
@@ -19,6 +25,8 @@ class Assets {
   static const String assetsImagesFacebookIcon = "assets/images/Facebook_Icon.png";
 
   static const String assetsImagesFashion = "assets/images/Fashion.png";
+
+  static const String assetsImagesFeedbackIcon = "assets/images/Feedback_Icon.png";
 
   static const String assetsImagesFilterIcon = "assets/images/Filter_Icon.png";
 
@@ -60,6 +68,8 @@ class Assets {
 
   static const String assetsImagesLogoSplashScreen = "assets/images/logo_splash_screen.png";
 
+  static const String assetsImagesMapChart = "assets/images/Map_Chart.png";
+
   static const String assetsImagesNameIcon = "assets/images/Name_Icon.svg";
 
   static const String assetsImagesOffer1 = "assets/images/Offer_1.png";
@@ -74,9 +84,19 @@ class Assets {
 
   static const String assetsImagesPhone = "assets/images/Phone.png";
 
+  static const String assetsImagesPhoto1 = "assets/images/Photo_1.png";
+
+  static const String assetsImagesPhoto2 = "assets/images/Photo_2.png";
+
+  static const String assetsImagesPhoto3 = "assets/images/Photo_3.png";
+
+  static const String assetsImagesPhoto4 = "assets/images/Photo_4.png";
+
   static const String assetsImagesPlant = "assets/images/Plant.png";
 
   static const String assetsImagesProfile = "assets/images/Profile.jpg";
+
+  static const String assetsImagesProfileShapes = "assets/images/profile_shapes.png";
 
   static const String assetsImagesSONYLogo2 = "assets/images/SONY_Logo_2.png";
 

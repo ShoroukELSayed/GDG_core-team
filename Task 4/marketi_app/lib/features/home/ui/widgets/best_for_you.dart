@@ -1,54 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_app/core/utils/app_images.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi_app/core/models/product_model.dart';
+import 'package:marketi_app/core/widgets/product_item.dart';
 import 'package:marketi_app/features/home/data/models/product_item_model.dart';
-import 'package:marketi_app/features/home/ui/widgets/product_item.dart';
 
 class BestForYou extends StatefulWidget {
-  const BestForYou({super.key});
+  const BestForYou({super.key, required this.bestForYou});
+  final List<ProductModel> bestForYou;
 
   @override
   State<BestForYou> createState() => _BestForYouState();
 }
 
 class _BestForYouState extends State<BestForYou> {
-  List<ProductItem> bestForYou = [
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'Black JBL Airbods',
-        productPrice: '799 LE',
-        productImage: Assets.assetsImagesAirBudsPic,
-        productDiscount: '10% OFF',
-        addToCart: true,
-      ),
-    ),
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'Sony Smart TV 55 inch ',
-        productPrice: '13999 LE',
-        productImage: Assets.assetsImagesSmartTV,
-        addToCart: true,
-      ),
-    ),
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'Black JBL Airbods',
-        productPrice: '799 LE',
-        productImage: Assets.assetsImagesAirBudsPic,
-        productDiscount: '10% OFF',
-        addToCart: true,
-      ),
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 210.h,
       child: ListView.builder(
         padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
-        itemCount: bestForYou.length,
+        itemCount: widget.bestForYou.length,
         itemBuilder: (context, index) {
-          return bestForYou[index];
+          return ProductItem(
+            productItemModel: ProductItemModel(
+              productId: widget.bestForYou[index].id,
+              productName: widget.bestForYou[index].title,
+              productPrice: widget.bestForYou[index].price.toString(),
+              productImage: widget.bestForYou[index].thumbnail,
+              productRating: widget.bestForYou[index].rating,
+              addToCart: true,
+              productDiscount:
+                  widget.bestForYou[index].discountPercentage.toString(),
+            ),
+          );
         },
       ),
     );

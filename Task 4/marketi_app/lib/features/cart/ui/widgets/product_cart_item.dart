@@ -1,11 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:marketi_app/core/utils/app_colors.dart';
-import 'package:marketi_app/core/utils/app_styles.dart';
-import 'package:marketi_app/core/widgets/favorite_icon_button.dart';
-import 'package:marketi_app/core/widgets/star_icon_button.dart';
 import 'package:marketi_app/features/cart/data/models/product_cart_item_model.dart';
-import 'package:marketi_app/features/cart/ui/widgets/item_counter.dart';
+import 'package:marketi_app/features/cart/ui/widgets/product_details.dart';
 
 class ProductCartItem extends StatefulWidget {
   const ProductCartItem({
@@ -23,10 +21,10 @@ class _ProductCartItemState extends State<ProductCartItem> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 155,
-      margin: const EdgeInsets.only(left: 4, right: 4, bottom: 16),
+      height: 210.h,
+      margin: EdgeInsets.only(left: 4.w, right: 4.w, bottom: 16.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -36,54 +34,17 @@ class _ProductCartItemState extends State<ProductCartItem> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.sp),
         child: Row(
           children: [
-            Image.asset(
-              widget.productCartItemModel.productImage,
-              width: 120,
-              height: 120,
+            CachedNetworkImage(
+             imageUrl:  widget.productCartItemModel.productImage,
+              width: 120.w,
+              height: 120.h,
               fit: BoxFit.cover,
             ),
-            const Gap(8),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        widget.productCartItemModel.productName,
-                        style: AppStyles.medium14,
-                      ),
-                      const Spacer(),
-                      const FavoriteIconButton(),
-                    ],
-                  ),
-                  Text(
-                    widget.productCartItemModel.productDescription,
-                    style: AppStyles.medium12
-                        .copyWith(color: AppColors.hintTextColor),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        widget.productCartItemModel.productPrice,
-                        style: AppStyles.medium14,
-                      ),
-                      const Spacer(),
-                      const StarIconButton(),
-                      Text(
-                        '4.5',
-                        style: AppStyles.medium12
-                            .copyWith(color: AppColors.secondaryColor),
-                      ),
-                    ],
-                  ),
-                  const ItemCounter(),
-                ],
-              ),
-            ),
+            Gap(8.w),
+            ProductDetails(productCartItemModel: widget.productCartItemModel),
           ],
         ),
       ),

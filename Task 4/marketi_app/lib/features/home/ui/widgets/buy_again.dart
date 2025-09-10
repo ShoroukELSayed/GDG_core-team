@@ -1,52 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_app/core/utils/app_images.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi_app/core/models/product_model.dart';
+import 'package:marketi_app/core/widgets/product_item.dart';
 import 'package:marketi_app/features/home/data/models/product_item_model.dart';
-import 'package:marketi_app/features/home/ui/widgets/product_item.dart';
 
 class BuyAgain extends StatefulWidget {
-  const BuyAgain({super.key});
+  const BuyAgain({super.key, required this.products});
+  final List<ProductModel> products;
 
   @override
   State<BuyAgain> createState() => _BuyAgainState();
 }
 
 class _BuyAgainState extends State<BuyAgain> {
-  List<ProductItem> bestForYou = [
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'Black Sony Headphone',
-        productPrice: '399 LE',
-        productImage: Assets.assetsImagesHeadphones,
-        addToCart: true,
-      ),
-    ),
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'HP Chromebook laptop',
-        productPrice: '14999 LE',
-        productImage: Assets.assetsImagesLaptopHPChromebookLaptop,
-        addToCart: true,
-      ),
-    ),
-    ProductItem(
-      productItemModel: ProductItemModel(
-        productName: 'Black JBL Airbods',
-        productPrice: '799 LE',
-        productImage: Assets.assetsImagesAirBudsPic,
-        productDiscount: '10% OFF',
-        addToCart: true,
-      ),
-    ),
-  ];
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 210.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: bestForYou.length,
+        itemCount: widget.products.length,
         itemBuilder: (context, index) {
-          return bestForYou[index];
+          return ProductItem(
+            productItemModel: ProductItemModel(
+              productId: widget.products[index].id,
+              productName: widget.products[index].title,
+              productPrice: widget.products[index].price.toString(),
+              productImage: widget.products[index].thumbnail,
+              productRating: widget.products[index].rating,
+              addToCart: true,
+            ),
+          );
         },
       ),
     );

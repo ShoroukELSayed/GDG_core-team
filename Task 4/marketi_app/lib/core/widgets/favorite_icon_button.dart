@@ -1,35 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi_app/core/cubits/user_favorite_cubit/user_favorite_cubit.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 
-class FavoriteIconButton extends StatefulWidget {
-  const FavoriteIconButton({super.key});
+class FavoriteIconButton extends StatelessWidget {
+  const FavoriteIconButton({
+    super.key,
+    required this.productId,
+  });
 
-  @override
-  State<FavoriteIconButton> createState() => _FavoriteIconButtonState();
-}
+  final int productId;
 
-class _FavoriteIconButtonState extends State<FavoriteIconButton> {
-  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
-    return IconButton.filled(
-      onPressed: () {
-        isFavorite = !isFavorite;
-        setState(() {});
+    return BlocBuilder<UserFavoriteCubit, UserFavoriteState>(
+      builder: (context, state) {
+        final cubit = context.watch<UserFavoriteCubit>();
+        final isFavorite = cubit.favoriteProducts.any((p) => p.id == productId);
+
+        return IconButton.filled(
+          onPressed: () {
+            if (isFavorite) {
+              cubit.removeProductFromFavorite(productId: productId);
+            } else {
+              cubit.addProductToFavorite(productId: productId);
+            }
+          },
+          icon: Icon(
+            isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
+            color: isFavorite ? AppColors.dartBlue900 : Colors.black,
+            size: 18.sp,
+          ),
+          style: IconButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.all(6.w),
+            minimumSize: Size(32.w, 32.h),
+          ),
+        );
       },
-      icon: isFavorite
-          ? const Icon(
-              Icons.favorite,
-              color: AppColors.secondaryColor,
-            )
-          : const Icon(
-              Icons.favorite_border_outlined,
-              color: Colors.black,
-            ),
-      iconSize: 18,
-      style: IconButton.styleFrom(
-        backgroundColor: Colors.white,
-      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketi_app/core/routing/routes.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
@@ -12,21 +13,21 @@ class SkipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16),
+      padding: EdgeInsets.only(left: 16.w),
       child: IconButton.outlined(
         onPressed: () {
           context.go(Routes.navigation);
         },
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
           ),
           side: const BorderSide(
-            color: AppColors.outlinedColor,
+            color: AppColors.rect,
           ),
         ),
         icon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
           child: Text(
             'Skip',
             style: AppStyles.semiBold16,

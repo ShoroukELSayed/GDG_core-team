@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -18,21 +20,22 @@ class CategoryItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 105,
-            height: 96,
+            width: 105.w,
+            height: 90.h,
             decoration: BoxDecoration(
               border: Border.all(
                 color: const Color(0xffB2CCFF).withValues(alpha: .7),
               ),
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: AssetImage(categoryImage),
-                fit: BoxFit.cover,
-              ),
-            ),
+              borderRadius: BorderRadius.circular(8)
+          ),
+          child: CachedNetworkImage(
+                  imageUrl:categoryImage,
+                ),
           ),
           Text(
             categoryName,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
             style: AppStyles.medium16.copyWith(
               color: Colors.black,
             ),

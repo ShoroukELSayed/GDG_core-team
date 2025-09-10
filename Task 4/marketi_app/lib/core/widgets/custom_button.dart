@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:marketi_app/core/utils/app_styles.dart';
 
@@ -38,11 +39,12 @@ class CustomButton extends StatelessWidget {
     required String text,
     required VoidCallback onPressed,
     required double width,
+    double height = 34,
     Key? key,
   }) : this(
             text: text,
             width: width,
-            height: 34,
+            height: height,
             backgroundColor: Colors.white,
             onPressed: onPressed,
             key: key);
@@ -52,10 +54,10 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
-        minimumSize: Size(width, height),
+        minimumSize: Size(width.w, height.h),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
-          side: const BorderSide(color: AppColors.outlinedColor),
+          borderRadius: BorderRadius.circular(14.r),
+          side: const BorderSide(color: AppColors.rect),
         ),
       ),
       onPressed: onPressed,

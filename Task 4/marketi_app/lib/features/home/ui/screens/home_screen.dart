@@ -1,64 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:marketi_app/features/home/ui/widgets/Categories.dart';
-import 'package:marketi_app/features/home/ui/widgets/best_for_you.dart';
-import 'package:marketi_app/features/home/ui/widgets/brands.dart';
-import 'package:marketi_app/features/home/ui/widgets/buy_again.dart';
+import 'package:marketi_app/features/home/ui/widgets/banners_builder.dart';
+import 'package:marketi_app/features/home/ui/widgets/best_for_you_section.dart';
+import 'package:marketi_app/features/home/ui/widgets/brands_section.dart';
+import 'package:marketi_app/features/home/ui/widgets/buy_again_section.dart';
+import 'package:marketi_app/features/home/ui/widgets/category_section.dart';
 
 import 'package:marketi_app/features/home/ui/widgets/home_app_bar.dart';
-import 'package:marketi_app/features/home/ui/widgets/offers_builder.dart';
-import 'package:marketi_app/features/home/ui/widgets/popular_product_builder.dart';
-import 'package:marketi_app/features/home/ui/widgets/search_field.dart';
-import 'package:marketi_app/core/widgets/section_title.dart';
+import 'package:marketi_app/core/widgets/search_item.dart';
+import 'package:marketi_app/features/home/ui/widgets/popular_products_section.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   static const String id = 'HomeScreen';
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14),
+        padding: EdgeInsets.symmetric(horizontal: 14.w),
         child: ListView(
           children: [
             const HomeAppBar(),
-            const Gap(14),
-            const SearchField(),
-            const Gap(14),
-            const OffersBuilder(),
-            const Gap(14),
-            const SectionTitle(
-              name: 'Popular Products',
-            ),
-            const PopularProductBuilder(),
-            const Gap(14),
-            const SectionTitle(
-              name: 'Category',
-            ),
-            const Gap(14),
-            const Categories(),
-            const Gap(14),
-            const SectionTitle(
-              name: 'Best for You',
-            ),
-            const BestForYou(),
-            const Gap(14),
-            const SectionTitle(
-              name: 'Brands',
-            ),
-            const Brands(),
-            const Gap(14),
-            const SectionTitle(
-              name: 'Buy Again',
-            ),
-            const BuyAgain(),
+            Gap(14.h),
+            const SearchItem(),
+            Gap(14.h),
+            BannersBuilder(),
+            Gap(14.h),
+            const PopularProductsSection(),
+            Gap(14.h),
+            const CategorySection(),
+            Gap(14.h),
+            const BestForYouSection(),
+            Gap(14.h),
+            const BrandsSection(),
+            Gap(14.h),
+            const BuyAgainSection(),
+            Gap(20.h),
           ],
         ),
       ),

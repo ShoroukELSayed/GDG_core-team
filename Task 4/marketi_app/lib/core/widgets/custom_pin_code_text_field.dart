@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class CustomPinCodeTextField extends StatelessWidget {
   const CustomPinCodeTextField({
-    super.key, this.onChanged,
+    super.key,
+    this.onChanged,
   });
 
   final void Function(String)? onChanged;
@@ -19,14 +21,14 @@ class CustomPinCodeTextField extends StatelessWidget {
         obscureText: false,
         animationType: AnimationType.fade,
         pinTheme: PinTheme(
-          activeColor: AppColors.outlinedColor,
+          activeColor: AppColors.rect,
           shape: PinCodeFieldShape.box,
-          borderRadius: BorderRadius.circular(16),
-          fieldHeight: 60,
-          fieldWidth: 47,
+          borderRadius: BorderRadius.circular(16.r),
+          fieldHeight: 54.h,
+          fieldWidth: 54.w,
           activeFillColor: Colors.white,
           inactiveFillColor: Colors.white,
-          inactiveColor: AppColors.outlinedColor,
+          inactiveColor: AppColors.rect,
         ),
         animationDuration: const Duration(milliseconds: 300),
         enableActiveFill: true,

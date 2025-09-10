@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi_app/core/utils/app_colors.dart';
 
 class StarIconButton extends StatefulWidget {
@@ -20,14 +21,14 @@ class _StarIconButtonState extends State<StarIconButton> {
         setState(() {});
       },
       icon: isStarred
-          ? const Icon(
+          ?  Icon(
               Icons.star,
-              size: 18,
-              color: AppColors.secondaryColor,
+              size: 18.sp,
+              color: AppColors.dartBlue900,
             )
-          : const Icon(
+          :  Icon(
               Icons.star_border,
-              size: 18,
+              size: 18.sp,
             ),
     );
   }

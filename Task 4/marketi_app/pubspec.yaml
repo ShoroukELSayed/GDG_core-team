@@ -44,6 +44,14 @@ dependencies:
   go_router: ^14.8.1
   dio: ^5.8.0+1
   flutter_bloc: ^9.1.0
+  flutter_rating_bar: ^4.0.1
+  flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.3
+  jwt_decoder: ^2.0.1
+  cached_network_image: ^3.4.1
+  http: ^1.5.0
+  twemoji: ^0.1.0
+  image_picker: ^1.2.0
 
 dev_dependencies:
   flutter_test:

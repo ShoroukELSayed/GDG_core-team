@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:marketi_app/core/utils/app_styles.dart';
-import 'package:marketi_app/core/widgets/custom_back_button.dart';
-import 'package:marketi_app/features/home/ui/widgets/search_field.dart';
-import 'package:marketi_app/features/Category/ui/widgets/Shopping_cart_icon.dart';
+import 'package:marketi_app/core/widgets/custom_app_bar.dart';
+import 'package:marketi_app/core/widgets/search_item.dart';
 import 'package:marketi_app/features/Category/ui/widgets/category_products_builder.dart';
 
 class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+  const CategoryScreen({
+    super.key,
+    required this.categoryName,
+  });
+  final String categoryName;
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -18,25 +21,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
+        padding: EdgeInsets.only(top: 40.h, left: 16.w, right: 16.w),
         child: Column(
           children: [
-            Row(
-              children: [
-                const CustomBackButton(),
-                const Spacer(),
-                Text(
-                  'Pampers',
-                  style: AppStyles.semiBold20,
-                ),
-                const Spacer(),
-                const ShoppingCartIcon(),
-              ],
-            ),
-            const Gap(14),
-            const SearchField(),
+            CustomAppBar(title: widget.categoryName, shoppingCart: true),
+            Gap(14.h),
+            const SearchItem(),
             const CategoryProductsBuilder(),
-            const Gap(14),
+            Gap(14.h),
           ],
         ),
       ),

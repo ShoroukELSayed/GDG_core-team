@@ -5,10 +5,11 @@ import 'package:marketi_app/core/utils/app_styles.dart';
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
     super.key,
-    required this.name,
+    required this.name, this.onPressed, 
   });
 
   final String name;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class SectionTitle extends StatelessWidget {
         ),
         const Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed:onPressed,
           child: Text(
             'View all',
             style: AppStyles.medium16.copyWith(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketi_app/core/routing/routes.dart';
@@ -16,24 +17,24 @@ class CartEmpty extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            const Gap(30),
+            Gap(30.h),
             Image.asset(Assets.assetsImagesIllustrationCartEmpty),
-            const Gap(22),
+            Gap(22.h),
             Text(
               'Your Cart is Empty',
               style: AppStyles.medium24,
             ),
-            const Gap(30),
+            Gap(30.h),
             Text(
               'Check our big offers, fresh products \n and fill your cart with items',
               textAlign: TextAlign.center,
               style: AppStyles.medium16,
             ),
-            const Gap(30),
+            Gap(30.h),
             CustomButton.primary(
               text: 'Start Shopping',
               onPressed: () {
-                context.go(Routes.navigation);
+                context.go(Routes.navigation, extra: 0);
               },
             )
           ],

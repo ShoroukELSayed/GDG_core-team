@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:marketi_app/core/helper/form_validator.dart';
 import 'package:marketi_app/core/utils/app_images.dart';
@@ -38,7 +39,7 @@ class _UserInfoState extends State<UserInfo> {
           label: 'Your Name',
           hintText: 'Full Name',
           prefixIcon: Transform.scale(
-            scale: 0.5,
+            scale: 0.5.sp,
             child: SvgPicture.asset(Assets.assetsImagesNameIcon),
           ),
         ),
